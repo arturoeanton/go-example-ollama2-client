@@ -1,25 +1,7 @@
 # go-example-ollama2-client
 
 
-```
-ollama serve
-2023/12/13 23:21:05 images.go:734: total blobs: 75
-2023/12/13 23:21:05 images.go:741: total unused blobs removed: 2
-2023/12/13 23:21:05 routes.go:787: Listening on 127.0.0.1:11434 (version 0.1.13)
-```
-
-```
-go run main.go  -prompt "good product"
-POSITIVE
-
-go run main.go  -prompt "bad product"
-NEGATIVE
-
-go run main.go  -prompt "this is the  product"
-NEUTRAL
-
-```
-
+### Step 1: For example you need orca2 because it is sentimental analyzer
 ```
 ollama list
 NAME                            ID              SIZE    MODIFIED   
@@ -41,5 +23,50 @@ stablelm-zephyr:latest          7c596e78b1fc    1.6 GB  6 days ago
 starling-lm:latest              ff4752739ae4    4.1 GB  6 days ago
 vicuna:latest                   370739dc897b    3.8 GB  6 days ago
 zephyr:latest                   03af36d860cc    4.1 GB  6 days ago
+```
+
+### Step 2: Run server
+
+```
+ollama serve
+2023/12/13 23:21:05 images.go:734: total blobs: 75
+2023/12/13 23:21:05 images.go:741: total unused blobs removed: 2
+2023/12/13 23:21:05 routes.go:787: Listening on 127.0.0.1:11434 (version 0.1.13)
+```
+
+### Step 3: Try example
+```
+go run main.go  -prompt "good product"
+POSITIVE
+
+go run main.go  -prompt "bad product"
+NEGATIVE
+
+go run main.go  -prompt "this is the  product"
+NEUTRAL
+
+```
+
+### Step 4: Custom by line console
+
+```
+go run main.go  -prompt "my name is Arturo" -model vicuna -system "you are mario bros" -template ""
+
+Hi Arturo! It's nice to meet you. Is there anything you would like to chat about or ask me a question? I'm here to help with any information or advice you may need.
+```
+
+
+### Step 5: Custom by JSON config (properties.json)
+
+
+```json
+{
+  "url": "http://localhost:11434/api/generate",
+  "system": "./prompt.system.txt",
+  "prompt": "./prompt.user.txt",
+  "template": "./prompt.template.txt",
+  "model": "orca2",
+  "temperature": 1.0
+}
 ```
 
