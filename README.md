@@ -1,5 +1,6 @@
 # go-example-ollama2-client
 
+This wants be one Gits for describe a client Ollama.
 
 ### Step 1: For example you need orca2 because it is sentiment analyzer
 ```
