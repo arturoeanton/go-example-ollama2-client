@@ -1,7 +1,7 @@
 # go-example-ollama2-client
 
 
-### Step 1: For example you need orca2 because it is sentimental analyzer
+### Step 1: For example you need orca2 because it is sentiment analyzer
 ```
 ollama list
 NAME                            ID              SIZE    MODIFIED   
