@@ -1,0 +1,8 @@
+{
+  "url": "http://localhost:11434/api/generate",
+  "system": "./prompt.system.txt",
+  "prompt": "./prompt.user.txt",
+  "template": "./prompt.template.txt",
+  "model": "orca2",
+  "temperature": 1.0
+}

@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"flag"
+	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -128,7 +129,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	log.Println(responseBody.Response)
+	fmt.Println(responseBody.Response)
 
 }
 
